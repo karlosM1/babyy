@@ -1,17 +1,30 @@
 /**
- * CUSTOMIZE: Replace paths with your own files under `public/`.
- * Keep the same filenames or update these constants to match.
+ * Paths under `public/`. Add or remove entries when you change files in
+ * `public/images/` or `public/videos/` (keep leading slash, match filename case).
  */
 export const WAVING_BOY_GIF = "/gifs/waving-boy.gif";
 
-export const PLACEHOLDER_PHOTOS = [
-  "/images/photo-1.jpg",
-  "/images/photo-2.jpg",
-  "/images/photo-3.jpg",
-  "/images/photo-4.jpg",
+export const PHOTOS = [
+  "/images/IMG_0055.JPG",
+  "/images/IMG_0074.JPG",
+  "/images/IMG_0090.JPG",
+  "/images/IMG_0100.JPG",
+  "/images/IMG_0117.JPG",
+  "/images/IMG_0355.JPG",
+  "/images/IMG_1822.JPG",
+  "/images/IMG_1929.JPG",
+  "/images/IMG_8387.JPG",
+  "/images/IMG_8484.JPG",
+  "/images/IMG_8521.JPG",
+  "/images/IMG_8526.JPG",
+  "/images/IMG_8587.JPG",
+  "/images/IMG_9357.JPG",
+  "/images/IMG_9386.PNG",
 ] as const;
 
-export const PLACEHOLDER_VIDEOS = [
-  "/videos/video-1.mp4",
-  "/videos/video-2.mp4",
+export const VIDEOS = [
+  "/videos/IMG_1309.mp4",
+  "/videos/IMG_1478.mp4",
+  "/videos/IMG_9361.mp4",
+  "/videos/IMG_9367.mp4",
 ] as const;

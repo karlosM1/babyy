@@ -4,20 +4,22 @@ import { GreetingIntro } from "./components/GreetingIntro";
 import { MessageNote } from "./components/MessageNote";
 import { PhotoboothSection, type PhotoStripConfig } from "./components/PhotoboothSection";
 import { VideoStrip } from "./components/VideoStrip";
-import { PLACEHOLDER_PHOTOS, PLACEHOLDER_VIDEOS } from "./constants/assets";
+import { PHOTOS, VIDEOS } from "./constants/assets";
 
 const MAIN_STRIPS: readonly PhotoStripConfig[] = [
-  { images: [PLACEHOLDER_PHOTOS[0], PLACEHOLDER_PHOTOS[1]], rotation: -5 },
-  { images: [PLACEHOLDER_PHOTOS[2]], rotation: 3 },
-  { images: [PLACEHOLDER_PHOTOS[3], PLACEHOLDER_PHOTOS[0]], rotation: 6 },
-  { images: [PLACEHOLDER_PHOTOS[1], PLACEHOLDER_PHOTOS[2], PLACEHOLDER_PHOTOS[3]], rotation: -3 },
+  { images: [PHOTOS[0], PHOTOS[1]], rotation: -5 },
+  { images: [PHOTOS[2], PHOTOS[3]], rotation: 3 },
+  { images: [PHOTOS[4], PHOTOS[5]], rotation: 6 },
+  { images: [PHOTOS[6], PHOTOS[7]], rotation: -3 },
 ];
 
 const FAVORITE_STRIPS: readonly PhotoStripConfig[] = [
-  { images: [PLACEHOLDER_PHOTOS[2], PLACEHOLDER_PHOTOS[0]], rotation: 4 },
-  { images: [PLACEHOLDER_PHOTOS[3]], rotation: -6 },
-  { images: [PLACEHOLDER_PHOTOS[0], PLACEHOLDER_PHOTOS[1], PLACEHOLDER_PHOTOS[2]], rotation: 2 },
+  { images: [PHOTOS[8], PHOTOS[9]], rotation: 4 },
+  { images: [PHOTOS[10], PHOTOS[11]], rotation: -6 },
+  { images: [PHOTOS[12], PHOTOS[13], PHOTOS[14]], rotation: 2 },
 ];
+
+const VIDEO_ROTATIONS = [-4, 5, -2, 3] as const;
 
 export default function App() {
   const [surpriseOpen, setSurpriseOpen] = useState(false);
@@ -91,19 +93,19 @@ export default function App() {
                     transition={{ delay: 0.06, duration: 0.45 }}
                     className="mx-auto mt-4 max-w-lg font-sans text-sm text-slate-600 sm:text-base"
                   >
-                    {/* CUSTOMIZE: replace `PLACEHOLDER_VIDEOS` in `src/constants/assets.ts` */}
-                    Tap play on each clip — swap in your own videos whenever you like.
+                    Tap play on each clip — these are your moments.
                   </motion.p>
                 </div>
 
                 <div className="mx-auto mt-14 flex max-w-6xl flex-wrap items-start justify-center gap-10 md:gap-16">
-                  <VideoStrip sources={[PLACEHOLDER_VIDEOS[0]]} rotation={-4} index={0} />
-                  <VideoStrip
-                    sources={[PLACEHOLDER_VIDEOS[1], PLACEHOLDER_VIDEOS[0]]}
-                    rotation={5}
-                    index={1}
-                  />
-                  <VideoStrip sources={[PLACEHOLDER_VIDEOS[1]]} rotation={-2} index={2} />
+                  {VIDEOS.map((src, index) => (
+                    <VideoStrip
+                      key={src}
+                      sources={[src]}
+                      rotation={VIDEO_ROTATIONS[index % VIDEO_ROTATIONS.length]}
+                      index={index}
+                    />
+                  ))}
                 </div>
               </section>
 
