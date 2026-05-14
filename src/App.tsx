@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { BackgroundMusic } from "./components/BackgroundMusic";
 import { GreetingIntro } from "./components/GreetingIntro";
 import { MessageNote } from "./components/MessageNote";
 import {
@@ -7,7 +8,12 @@ import {
   type PhotoStripConfig,
 } from "./components/PhotoboothSection";
 import { VideoStrip } from "./components/VideoStrip";
-import { PHOTOS, VIDEOS, type VideoPath } from "./constants/assets";
+import {
+  BACKGROUND_MUSIC_SRC,
+  PHOTOS,
+  VIDEOS,
+  type VideoPath,
+} from "./constants/assets";
 
 const MAIN_STRIPS: readonly PhotoStripConfig[] = [
   { images: [PHOTOS[0], PHOTOS[1]], rotation: -5 },
@@ -96,7 +102,7 @@ export default function App() {
                     transition={{ delay: 0.06, duration: 0.45 }}
                     className="mx-auto mt-4 max-w-lg font-sans text-sm text-slate-600 sm:text-base"
                   >
-                    Tap play on each clip — these are your moments.
+                    Tap play on each clip, these are our moments.
                   </motion.p>
                 </div>
 
@@ -117,6 +123,12 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <BackgroundMusic
+        src={BACKGROUND_MUSIC_SRC}
+        title="The Way I Love You"
+        artist="Michal Leah"
+      />
     </div>
   );
 }

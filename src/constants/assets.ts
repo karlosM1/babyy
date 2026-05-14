@@ -4,6 +4,13 @@
  */
 export const WAVING_BOY_GIF = "/gifs/waving-boy.gif";
 
+/**
+ * Michal Leah — "The Way I Love You" (background loop).
+ * Add your legally purchased / licensed MP3 as this filename under `public/audio/`,
+ * or change this path to match your file name.
+ */
+export const BACKGROUND_MUSIC_SRC = "/audio/the-way-i-love-you.mp3";
+
 export const PHOTOS = [
   "/images/IMG_0055.JPG",
   "/images/IMG_0074.JPG",
