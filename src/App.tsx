@@ -2,9 +2,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { GreetingIntro } from "./components/GreetingIntro";
 import { MessageNote } from "./components/MessageNote";
-import { PhotoboothSection, type PhotoStripConfig } from "./components/PhotoboothSection";
+import {
+  PhotoboothSection,
+  type PhotoStripConfig,
+} from "./components/PhotoboothSection";
 import { VideoStrip } from "./components/VideoStrip";
-import { PHOTOS, VIDEOS } from "./constants/assets";
+import { PHOTOS, VIDEOS, type VideoPath } from "./constants/assets";
 
 const MAIN_STRIPS: readonly PhotoStripConfig[] = [
   { images: [PHOTOS[0], PHOTOS[1]], rotation: -5 },
@@ -98,7 +101,7 @@ export default function App() {
                 </div>
 
                 <div className="mx-auto mt-14 flex max-w-6xl flex-wrap items-start justify-center gap-10 md:gap-16">
-                  {VIDEOS.map((src, index) => (
+                  {VIDEOS.map((src: VideoPath, index: number) => (
                     <VideoStrip
                       key={src}
                       sources={[src]}
@@ -111,10 +114,6 @@ export default function App() {
 
               <MessageNote />
             </main>
-
-            <footer className="pb-10 pt-4 text-center font-sans text-xs text-slate-500 sm:text-sm">
-              Made with love — happy birthday, babyyy.
-            </footer>
           </motion.div>
         )}
       </AnimatePresence>

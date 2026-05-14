@@ -15,7 +15,13 @@ type PhotoboothSectionProps = {
   strips: readonly PhotoStripConfig[];
 };
 
-export function PhotoboothSection({ id, eyebrow, title, titleLine2, strips }: PhotoboothSectionProps) {
+export function PhotoboothSection({
+  id,
+  eyebrow,
+  title,
+  titleLine2,
+  strips,
+}: PhotoboothSectionProps) {
   return (
     <section
       id={id}
@@ -64,7 +70,8 @@ export function PhotoboothSection({ id, eyebrow, title, titleLine2, strips }: Ph
           transition={{ delay: 0.08, duration: 0.5 }}
           className="mx-auto mt-4 max-w-xl font-sans text-sm text-slate-600 sm:text-base"
         >
-          Swap in your favorite photos whenever you like — each slot is yours to customize.
+          I love you babyyy, and I hope you enjoy these moments as much as I do.
+          Tap play on each strip to see the photos!
         </motion.p>
       </div>
 

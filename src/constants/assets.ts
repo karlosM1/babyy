@@ -28,3 +28,9 @@ export const VIDEOS = [
   "/videos/IMG_9361.mp4",
   "/videos/IMG_9367.mp4",
 ] as const;
+
+/** Union of all photobooth image URLs in `PHOTOS` */
+export type PhotoPath = (typeof PHOTOS)[number];
+
+/** Union of all clip URLs in `VIDEOS` */
+export type VideoPath = (typeof VIDEOS)[number];
