@@ -25,7 +25,7 @@ export function BirthdayHero({
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,182,193,0.35),transparent_45%),radial-gradient(circle_at_80%_10%,rgba(196,181,253,0.35),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(255,213,200,0.45),transparent_55%)]"
       />
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col gap-8 lg:flex-row lg:items-center">
-        <div className="flex flex-1 flex-col justify-center text-center lg:max-w-md lg:text-left">
+        <div className="flex flex-1 flex-col justify-centenr text-center lg:max-w-md lg:text-left">
           <p className="animate-fade-up font-sans text-sm font-semibold uppercase tracking-[0.2em] text-rose/90 opacity-0 [animation-delay:80ms]">
             A tiny universe for you
           </p>

@@ -29,13 +29,12 @@ body {
   }
 }
 
-@keyframes confetti-fall {
-  0% {
-    transform: translate3d(0, -10vh, 0) rotate(0deg);
-    opacity: 1;
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
   }
-  100% {
-    transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(720deg);
-    opacity: 0.2;
-  }
+}
+
+.typing-caret {
+  animation: caret-blink 1s step-end infinite;
 }
